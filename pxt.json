@@ -2,6 +2,8 @@
   "name": "Moon",
   "version": "0.0.2",
   "description": "Extension for Moon calculations: Azimuth, Height, and Phase.",
+  "icon": "🌙",
+  "color": "#0000FF",
   "dependencies": {
     "core": "*"
   },
