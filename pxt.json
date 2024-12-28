@@ -1,0 +1,14 @@
+{
+  "name": "Moon",
+  "version": "0.0.1",
+  "description": "Extension for Moon calculations: Azimuth, Height, and Phase.",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": [
+    "main.ts",
+    "README.md"
+  ],
+  "testFiles": [],
+  "public": true
+}
