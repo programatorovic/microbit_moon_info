@@ -98,7 +98,4 @@ namespace Moon {
         return phase;
     }
 
-    export function Illumination(): number {
-        return Phase();
-    }
 }
