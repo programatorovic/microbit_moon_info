@@ -53,7 +53,7 @@ namespace Moon {
         const LST = localSiderealTime(JD);
         const moon = moonPosition(JD);
 
-        const H = (LST - moon.RA) % 360;
+        let H = (LST - moon.RA) % 360; // Updated to let
         if (H < 0) H += 360;
 
         const Hrad = H * Math.PI / 180;
@@ -73,7 +73,7 @@ namespace Moon {
         const LST = localSiderealTime(JD);
         const moon = moonPosition(JD);
 
-        const H = (LST - moon.RA) % 360;
+        let H = (LST - moon.RA) % 360; // Updated to let
         if (H < 0) H += 360;
 
         const Hrad = H * Math.PI / 180;
