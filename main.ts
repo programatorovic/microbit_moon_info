@@ -1,4 +1,4 @@
-// main.ts
+//% color=#0fbc11 icon="\u1F319" block="Moon"
 namespace Moon {
     let observerLatitude: number;
     let observerLongitude: number;
