@@ -1,4 +1,3 @@
-//% color=#0fbc11 icon="\u1F319" block="Moon"
 namespace Moon {
     let observerLatitude: number;
     let observerLongitude: number;
@@ -9,17 +8,7 @@ namespace Moon {
     let minute: number;
     let second: number;
 
-    export function SetMoon(lat: number, lon: number, yr: number, mo: number, d: number, h: number, min: number, sec: number): void {
-        observerLatitude = lat;
-        observerLongitude = lon;
-        year = yr;
-        month = mo;
-        day = d;
-        hour = h;
-        minute = min;
-        second = sec;
-    }
-
+    // Helper functions
     function julianDate(): number {
         const A = Math.floor((14 - month) / 12);
         const Y = year + 4800 - A;
@@ -48,6 +37,23 @@ namespace Moon {
         return { RA: RA % 360, Dec };
     }
 
+    // Blocks
+    // Block to set the Moon parameters
+    //% block="Set Moon | GPSx $lat | GPSy $lon | Year $yr | Month $mo | Day $dy | Hour $hr | Minute $mi | Second $sec"
+    //% inlineInputMode=inline
+    export function SetMoon(lat: number, lon: number, yr: number, mo: number, d: number, h: number, min: number, sec: number): void {
+        observerLatitude = lat;
+        observerLongitude = lon;
+        year = yr;
+        month = mo;
+        day = d;
+        hour = h;
+        minute = min;
+        second = sec;
+    }
+
+    // Block to calculate the Azimuth
+    //% block="Azimuth"
     export function Azimuth(): number {
         const JD = julianDate();
         const LST = localSiderealTime(JD);
@@ -68,6 +74,8 @@ namespace Moon {
         return azimuth >= -180 && azimuth <= 180 ? azimuth : azimuth % 360;
     }
 
+    // Block to calculate the Height
+    //% block="Height"
     export function Height(): number {
         const JD = julianDate();
         const LST = localSiderealTime(JD);
@@ -87,6 +95,8 @@ namespace Moon {
         return height;
     }
 
+    // Block to calculate the Phase
+    //% block="Phase"
     export function Phase(): number {
         const JD = julianDate();
         const T = (JD - 2451545.0) / 36525;
