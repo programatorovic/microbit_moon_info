@@ -39,7 +39,7 @@ namespace Moon {
 
     // Blocks
     // Block to set the Moon parameters
-    //% block="Set Moon | GPSx $lat | GPSy $lon | Year $yr | Month $mo | Day $dy | Hour $hr | Minute $mi | Second $sec"
+    //% block="Set Moon | GPSx $lat | GPSy $lon | Year $yr | Month $mo | Day $d | Hour $h | Minute $min | Second $sec"
     //% inlineInputMode=inline
     export function SetMoon(lat: number, lon: number, yr: number, mo: number, d: number, h: number, min: number, sec: number): void {
         observerLatitude = lat;
